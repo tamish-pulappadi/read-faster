@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Read Faster</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Setup Panel (visible before reading) -->
+  <div id="setup-panel">
+    <h1>Read Faster</h1>
+    <textarea id="text-input" placeholder="Paste your text here..." aria-label="Text input"></textarea>
+    <div class="wpm-control">
+      <label for="wpm-setup">Speed</label>
+      <input type="range" id="wpm-setup" min="100" max="1000" value="300" step="10" aria-label="Words per minute">
+      <span id="wpm-setup-display">300 WPM</span>
+    </div>
+    <button id="start-btn">Start Reading</button>
+  </div>
+
+  <!-- Reading Display (visible during reading) -->
+  <div id="reading-display" class="hidden">
+    <div id="word-container">
+      <span id="word-before"></span><span id="word-anchor"></span><span id="word-after"></span>
+    </div>
+    <div id="progress-indicator"></div>
+  </div>
+
+  <!-- Controls (visible during reading) -->
+  <div id="controls" class="hidden">
+    <div class="wpm-control">
+      <label for="wpm-live">Speed</label>
+      <input type="range" id="wpm-live" min="100" max="1000" value="300" step="10" aria-label="Words per minute">
+      <span id="wpm-live-display">300 WPM</span>
+    </div>
+    <div class="button-group">
+      <button id="pause-btn" aria-label="Pause reading">Pause</button>
+      <button id="stop-btn" aria-label="Stop reading">Stop</button>
+    </div>
+  </div>
+
+  <!-- Theme Toggle (always visible) -->
+  <button id="theme-toggle" aria-label="Toggle theme">◐</button>
+
+  <script src="app.js"></script>
+</body>
+</html>
